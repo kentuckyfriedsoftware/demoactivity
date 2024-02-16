@@ -70,21 +70,23 @@ class mod_demoactivity_mod_form extends moodleform_mod {
         // ... or adding more fieldsets ('header' elements) if needed for better logic.
         $mform->addElement('static', 'label1', 'demoactivitysettings', get_string('demoactivitysettings', 'mod_demoactivity'));
         $mform->addElement('header', 'demoactivityfieldset', get_string('demoactivityfieldset', 'mod_demoactivity'));
-        $mform->addElement('text', 'setting1', get_string('setting1', 'mod_demoactivity'));
-        $mform->setType('setting1', PARAM_TEXT);
-        $mform->addRule('setting1', null, 'required', null, 'client');
+        $mform->addElement('text', 'instance_setting1', get_string('instance_setting1', 'mod_demoactivity'));
+        $mform->setType('instance_setting1', PARAM_TEXT);
+        $mform->addRule('instance_setting1', null, 'required', null, 'client');
 
-        $mform->addElement('text', 'setting2', get_string('setting2', 'mod_demoactivity'));
-        $mform->setType('setting2', PARAM_TEXT);
-        $mform->addRule('setting2', null, 'required', null, 'client');
-
-        $mform->addElement('select', 'setting3', get_string('setting3', 'mod_demoactivity'), array(
-            'option1' => get_string('option1', 'mod_demoactivity'),
-            'option2' => get_string('option2', 'mod_demoactivity'),
-            'option3' => get_string('option3', 'mod_demoactivity'),
+        $mform->addElement('text', 'instance_setting2', get_string('instance_setting2', 'mod_demoactivity'));
+        $mform->setType('instance_setting2', PARAM_TEXT);
+        $mform->addRule('instance_setting2', null, 'required', null, 'client');
+        
+        $demo_select = $mform->createElement('select', 'instance_setting3', get_string('instance_setting3', 'mod_demoactivity'), array(
+            '0' => get_string('option1', 'mod_demoactivity'),
+            '1' => get_string('option2', 'mod_demoactivity'),
+            '2' => get_string('option3', 'mod_demoactivity'),
         ));
-        $mform->setType('setting3', PARAM_ALPHA);
-        $mform->addRule('setting3', null, 'required', null, 'client');
+        $demo_select->setSelected('0');
+        $mform->addElement($demo_select);
+        $mform->setType('instance_setting3', PARAM_INT);
+        $mform->addRule('instance_setting3', null, 'required', null, 'client');
 
         // Add standard elements.
         $this->standard_coursemodule_elements();

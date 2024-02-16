@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'mod_demoactivity';
 $plugin->release = '0.1.0';
-$plugin->version = 2024021510;
+$plugin->version = 2024021516;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_ALPHA;

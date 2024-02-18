@@ -1,0 +1,6 @@
+table.mod_demoactivity_settings,
+table.mod_demoactivity_settings td,
+table.mod_demoactivity_settings th {
+    padding: 1px;
+    border: 1px solid #000000;
+}

@@ -45,19 +45,49 @@ require_login($course, true, $cm);
 
 $modulecontext = context_module::instance($cm->id);
 
-//~ $event = \mod_demoactivity\event\course_module_viewed::create(array(
-    //~ 'objectid' => $moduleinstance->id,
-    //~ 'context' => $modulecontext
-//~ ));
-//~ $event->add_record_snapshot('course', $course);
-//~ $event->add_record_snapshot('demoactivity', $moduleinstance);
-//~ $event->trigger();
-
 $PAGE->set_url('/mod/demoactivity/view.php', array('id' => $cm->id));
 $PAGE->set_title(format_string($moduleinstance->name));
 $PAGE->set_heading(format_string($course->fullname));
 $PAGE->set_context($modulecontext);
 
+// Export the plugin configuration to JavaScript.
+$PAGE->requires->js_export_plugin_config('mod_demoactivity');
+//~ $PAGE->requires->js_export_plugin_config('mod_demoactivity', ['setting1', 'setting5']);
+
 echo $OUTPUT->header();
 
+// Include the AMD module.
+echo $PAGE->requires->js_call_amd('mod_demoactivity/module', 'init');
+
+// Get settings from the database.
+$setting1 = get_config('mod_demoactivity', 'setting1');
+$setting2 = get_config('mod_demoactivity', 'setting2');
+$setting3 = get_config('mod_demoactivity', 'setting3');
+$setting4 = get_config('mod_demoactivity', 'setting4');
+
+// Display settings in a table.
+echo '<table class="mod_demoactivity_settings">';
+echo '<tr id="demoactivity_setting1"><th>' . get_string('setting1', 'mod_demoactivity') . '</th>
+        <td>' . $setting1 . '</td>
+        <th>M.mod_demoactivity.setting1</th>
+        <td id="M_mod_demoactivity_setting1"></td>
+    </tr>';
+echo '<tr id="demoactivity_setting2"><th>' . get_string('setting2', 'mod_demoactivity') . '</th>
+        <td>' . $setting2 . '</td>
+        <th>M.mod_demoactivity.setting2</th>
+        <td id="M_mod_demoactivity_setting2"></td>
+    </tr>';
+echo '<tr id="demoactivity_setting3"><th>' . get_string('setting3', 'mod_demoactivity') . '</th>
+        <td>' . $setting3 . '</td>
+        <th>M.mod_demoactivity.setting3</th>
+        <td id="M_mod_demoactivity_setting3"></td>
+    </tr>';
+echo '<tr><th>' . get_string('setting4', 'mod_demoactivity') . '</th>
+        <td>' . $setting4 . '</td>
+        <th>M.mod_demoactivity.setting4</th>
+        <td id="M_mod_demoactivity_setting4"></td>
+    </tr>';
+echo '</table>';
+
+//~ echo '<span class="demodebug">' . var_dump(context_module::instance($cm->id)) . '</span>';
 echo $OUTPUT->footer();

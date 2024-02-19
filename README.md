@@ -1,8 +1,6 @@
 # Demo Activity #
 
-TODO Describe the plugin shortly here.
-
-TODO Provide more detailed description here.
+Demo Activity to test a new Moodle feature which allows for export of plugin settings to the global 'M' variable.
 
 ## Installing via uploaded ZIP file ##
 
@@ -29,7 +27,7 @@ to complete the installation from the command line.
 
 ## License ##
 
-2024 Your Name <you@example.com>
+2024 Your Name <florian.reiter@prolehre.tum.de>
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software

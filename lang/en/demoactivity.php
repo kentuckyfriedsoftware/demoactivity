@@ -19,7 +19,7 @@
  *
  * @package     mod_demoactivity
  * @category    string
- * @copyright   2024 Your Name <you@example.com>
+ * @copyright   2024 Your Name <florian.reiter@prolehre.tum.de>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,15 +29,10 @@ $string['pluginname'] = 'Demo Activity';
 $string['modulename'] = 'DA';
 $string['modulenameplural'] = 'DAs';
 $string['demoactivityname'] = 'DA Name';
-//~ $string['mod_demoactivity:demoactivityname'] = 'DA Name';
 $string['demoactivityname_help'] = 'Provide a human readable name for your DA';
 $string['demoactivitysettings'] = 'DA Settings';
-$string['demoactivityfieldset'] = 'DA Fieldset';
 $string['pluginadministration'] = 'Manage this DA';
 $string['plugindescription'] = 'A Demo Moodle activity plugin';
-$string['option1'] = 'Option 1';
-$string['option2'] = 'Option 2';
-$string['option3'] = 'Option 3';
 $string['setting1'] = 'Setting 1';
 $string['setting2'] = 'Setting 2';
 $string['setting3'] = 'Setting 3';

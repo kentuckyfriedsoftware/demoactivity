@@ -89,5 +89,4 @@ echo '<tr><th>' . get_string('setting4', 'mod_demoactivity') . '</th>
     </tr>';
 echo '</table>';
 
-//~ echo '<span class="demodebug">' . var_dump(context_module::instance($cm->id)) . '</span>';
 echo $OUTPUT->footer();
